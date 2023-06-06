@@ -10,7 +10,7 @@
 
   # [Links](#links)
   -Solution URL: https://github.com/Adjokor/Newsletter_design-interfacae/upload/main
-  -Live URL: 
+  -Live URL: https://647e87f0c6cf0c40b4a4de2e--prupartel-14.netlify.app/
 
 
   # [Built with](#built-with)
