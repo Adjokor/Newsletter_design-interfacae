@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="news.css">
+  
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+
+  
+  <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+</head>
+<body>
+  <!-- Sign-up form start -->
+  <div class="flex container">
+    <div class="content">
+      <div class="heading">
+        <h1>Stay updated!</h1>
+        <p>Join 60,000+ product managers receiving monthly updates on:</p>
+      </div>
+
+        <!-- ITEMS -->
+        <ul class="items-listing">
+          <li class="items">Product discovery and building what matters</li>
+          <li class="items">Measuring to ensure updates are a success</li>
+          <li class="items">And much more!</li>
+        </ul>
+
+        <!-- EMAIL -->
+      <div class="email">
+        <label for="Email" class="textbox-input">
+          <span class="address">
+            <span >Email</span> 
+            <span class="valid">   valid email required</span>
+          </span> 
+          <input class="indress" type="email" placeholder="email@company.com">
+        </label>
+      </div>
+
+      <!-- BUTTON -->
+      <div class="butt">
+        <button class="colorbutt validate">Subscribe to monthly newsletter</button> 
+      </div>
+    </div>
+      <!-- IMAGE -->
+    <div class="image"> </div>
+  </div>
+  
+  
+  <!-- SUCCESS CHECK -->
+  <div class=" check-container check">
+    <div class="check_content">
+      <img src="assets/images/icon-success.svg" alt="" />
+      <h1 class="head">Thanks for subscribing!</h1>
+      <p class="paragraph">
+        A confirmation email has been sent to
+        <span class="valid_email"></span> . Please open it and click the
+        button inside to confirm your subscription.
+      </p>
+      <div class="btn"> <button type="button" class="dismiss-butt dismiss">
+        Dismiss message
+      </button></div>
+     
+    </div >
+    
+  </div>
+
+  
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Genevieve A. Adjetey</a>.
+  </div> -->
+</body>
+<script>
+  const indress = document.querySelector(".indress");
+  const valid = document.querySelector(".valid");
+  const container = document.querySelector(".container");
+  const checkContainer = document.querySelector(".check-container");
+
+  document.querySelector(".validate").addEventListener("click", () => {
+    valid.style.opacity = 0;
+    indress.style.border = "2px solid transparent";
+
+    if (indress.validity.typeMismatch || indress.value == "") {
+      indress.style.border = "2px solid hsl(4, 100%, 67%)";
+      valid.style.opacity = 1;
+      console.log("entered");
+    } else {
+      document.querySelector(".valid_email").textContent = indress.value;
+      container.style.display = "none";
+      checkContainer.style.display = "flex";
+      indress.value = "";
+    }
+  });
+
+  document.querySelector(".dismiss").addEventListener("click", () => {
+    checkContainer.style.display = "none";
+    container.style.display = "flex";
+  });
+</script>
+</html>
